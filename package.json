@@ -1,0 +1,30 @@
+{
+  "name": "horsemove",
+  "version": "1.0.0",
+  "description": "A simple chess game with vue.js",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglyfly": "^1.4.2",
+    "readable-stream": "^3.4.0"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimadroog/horsemove.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimadroog/horsemove/issues"
+  },
+  "homepage": "https://github.com/dimadroog/horsemove#readme"
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, width = 500">
+    <meta charset="utf-8">
+    <title>Ход конем.</title>
+</head>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="dist/css/styles.min.css"> 
+    <div class="container">
+        <div class="card mt-4">
+            <div class="card-body">
+                <h1 class="card-title text-muted">Ход конем.</h1>
+                <p class="card-text text-muted">Пройди шахматным конем всю доску без повторений. <br>Выбери любой уровень.</p>
+
+                <div id="horsemove">
+
+	            	<template v-for="level in levels">
+	                	<button 
+	                        class="btn btn-outline-secondary mb-1 mr-1" 
+	                        v-bind:class="[{'active': (board_rows == level.row && board_cols == level.col)},]" 
+	                        v-on:click="getBoard(level.row, level.col)">{{ level.row }}x{{ level.col }}</button> 
+	            	</template>
+
+                    <hr>
+
+                    <table class="table-board mb-2">
+                        <tr v-for="row in board">
+                            <template v-for="cell in row">
+                                <td v-bind:class="[{'played': cell.played != 0 }, {'current': cell.current }, {'available': cell.available }]" v-on:click="cellClick(cell)">
+                                    <span v-if="cell.played && !cell.current">
+									{{ cell.played }}
+									</span>
+                                </td>
+                            </template>
+                        </tr>
+                    </table>
+
+                    <div class="mb-2">
+                        <button 
+                        	class="btn btn-secondary" 
+                        	v-bind:disabled="played < 1" 
+                        	v-on:click="getBoard(board_rows, board_cols)">Сбросить</button>
+                        <button 
+                        	class="btn btn-secondary" 
+                        	v-bind:disabled="played < 2" 
+                        	v-on:click="undo">Ход назад</button>
+                    </div>
+                    <p class="text-muted">{{game_result}} &nbsp;</p>
+                </div> <!-- horsemove -->
+
+            </div> <!-- card body -->
+        </div> <!-- card -->
+
+        <div class="text-center mt-2">
+            <a target="_blank" class="text-muted" href="https://github.com/dimadroog/horsemove">https://github.com/dimadroog/horsemove</a>
+        </div>
+
+    </div>
+    
+    <script src="dist/js/scripts.min.js"></script>
+</body>
+
+</html>
