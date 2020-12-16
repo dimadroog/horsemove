@@ -1,0 +1,45 @@
+.container {
+  min-width: 470px;
+}
+
+.table-board {
+  border-spacing: 0;
+}
+
+.table-board tr td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.table-board tr:nth-child(odd) td:nth-child(odd),
+.table-board tr:nth-child(even) td:nth-child(even) {
+  background-color: #eeeed2;
+}
+
+.table-board tr:nth-child(even) td:nth-child(odd),
+.table-board tr:nth-child(odd) td:nth-child(even) {
+  background-color: #769656;
+}
+
+.table-board tr td.current {
+  background-image: url("../img/horse.png");
+  background-size: cover;
+}
+
+.table-board tr td.available {
+  background-image: url("../img/available.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.table-board tr td.played {
+  background-color: #ff9800 !important;
+  border-top: 1px solid #ffab2e;
+  border-right: 1px solid #ffab2e;
+  font-family: sans-serif;
+  color: white;
+  font-size: 13px;
+}
